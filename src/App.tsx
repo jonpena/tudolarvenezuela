@@ -19,8 +19,6 @@ const localStorageProvider = () => {
 
 const swrConfig: any = { provider: localStorageProvider };
 
-// console.log(import.meta.url);
-
 function App() {
   return (
     <div className='relative border min-h-screen'>
