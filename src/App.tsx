@@ -1,7 +1,6 @@
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
 import ListCards from './components/ListCards';
 import { SWRConfig } from 'swr';
+import Layout from './container/Layout';
 
 const localStorageProvider = () => {
   // When initializing, we restore the data from `localStorage` into a map.
@@ -13,7 +12,6 @@ const localStorageProvider = () => {
     const appCache = JSON.stringify(Array.from(map.entries()));
     localStorage.setItem('tudolarvenezuela-cache', appCache);
   });
-
   return map;
 };
 
@@ -21,13 +19,11 @@ const swrConfig: any = { provider: localStorageProvider };
 
 function App() {
   return (
-    <div className='relative border min-h-screen'>
-      <Navbar />
-      <SWRConfig value={swrConfig}>
-        <ListCards />
-      </SWRConfig>
-      <Footer />
-    </div>
+    <Layout>
+      {/* <SWRConfig value={swrConfig}> */}
+      <ListCards />
+      {/* </SWRConfig> */}
+    </Layout>
   );
 }
 
