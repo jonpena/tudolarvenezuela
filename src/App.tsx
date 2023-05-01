@@ -20,9 +20,9 @@ const swrConfig: any = { provider: localStorageProvider };
 function App() {
   return (
     <Layout>
-      {/* <SWRConfig value={swrConfig}> */}
-      <ListCards />
-      {/* </SWRConfig> */}
+      <SWRConfig value={swrConfig}>
+        <ListCards />
+      </SWRConfig>
     </Layout>
   );
 }
