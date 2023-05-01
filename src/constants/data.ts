@@ -54,7 +54,9 @@ export const updateData = (dolarPrices: any, dolarToday: any) => {
     {
       title: 'Dolar Today',
       image: './images/dolarToday.webp',
-      price: dolarToday ? dolarToday.USD.dolartoday : 'isLoading',
+      price: dolarToday
+        ? String(dolarToday.USD.dolartoday).replace('.', ',')
+        : 'isLoading',
       fecha: newfecha2,
     },
     {
