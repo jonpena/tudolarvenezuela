@@ -29,40 +29,32 @@ export const InitialData: CardInterface[] = [
   },
 ];
 
-export const updateData = (dolarPrices: any, dolarToday: any) => {
-  const newfecha1 = dolarPrices
-    ? moment(dolarPrices.createdAt).format('hh:mm A DD/MM/YYYY')
-    : '';
-
-  const newfecha2 = dolarToday
-    ? ConvertDateES2En(dolarToday._timestamp.fecha)
-    : '';
+export const updateData = (dolarPrices: any) => {
+  const newfecha1 = moment(dolarPrices.createdAt).format('hh:mm A DD/MM/YYYY');
 
   return [
     {
       title: 'Banco Central',
       image: './images/BCV.webp',
-      price: dolarPrices ? dolarPrices.prices[0] : 'isLoading',
+      price: dolarPrices ? dolarPrices[2] : 'isLoading',
       fecha: newfecha1,
     },
     {
-      title: 'Dolar Paralelo',
-      image: './images/dolarParalelo.webp',
-      price: dolarPrices ? dolarPrices.prices[1] : 'isLoading',
+      title: 'Dolar Bitcoin',
+      image: './images/bitcoin.webp',
+      price: dolarPrices ? dolarPrices[4] : 'isLoading',
       fecha: newfecha1,
     },
     {
       title: 'Dolar Today',
       image: './images/dolarToday.webp',
-      price: dolarToday
-        ? String(dolarToday.USD.dolartoday).replace('.', ',')
-        : 'isLoading',
-      fecha: newfecha2,
+      price: dolarPrices ? dolarPrices[0] : 'isLoading',
+      fecha: newfecha1,
     },
     {
-      title: 'Monitor Dolar',
+      title: 'Dolar Cucuta',
       image: './images/dolarMonitor.webp',
-      price: dolarPrices ? dolarPrices.prices[3] : 'isLoading',
+      price: dolarPrices ? dolarPrices[6] : 'isLoading',
       fecha: newfecha1,
     },
   ];

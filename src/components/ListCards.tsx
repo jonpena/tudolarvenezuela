@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { InitialData, updateData } from '../constants/data';
-import { URI_API_AWS, URI_API_DOLARTODAY } from '../config/config';
+import { URI_API_AWS } from '../config/config';
 import { dataFetching } from '../fetcher/dataFetching';
 import useSWR from 'swr';
 import Card from './Card';
@@ -15,17 +15,13 @@ const ListCards = () => {
     { revalidateOnFocus: false, revalidateOnMount: true }
   );
 
-  const { data: dolarToday, isLoading: isLoadingDolarToday } = useSWR(
-    URI_API_DOLARTODAY,
-    dataFetching,
-    { revalidateOnFocus: false, revalidateOnMount: true }
-  );
-
   useEffect(() => {
-    if (!isLoadingPrices || !isLoadingDolarToday) {
-      setPrices(updateData(dolarPrices, dolarToday));
+    if (!isLoadingPrices) {
+      console.log(dolarPrices);
+
+      setPrices(updateData(dolarPrices));
     }
-  }, [dolarPrices, dolarToday]);
+  }, [dolarPrices]);
 
   return (
     <section className='max-w-7xl mt-20 mx-auto px-14 mb-16 py-8 grid grid-auto-fluid place-items-center  gap-10'>

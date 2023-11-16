@@ -1,5 +1,3 @@
-import Button from './Button';
-
 const Navbar = () => {
   return (
     <div className='fixed left-0 top-0 z-50 py-3 bg-white shadow-md w-screen card-btn one'>
