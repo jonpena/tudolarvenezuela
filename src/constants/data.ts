@@ -1,6 +1,5 @@
 import { CardInterface } from '../interfaces/card.interface';
-import moment from 'moment';
-import { ConvertDateES2En } from '../utils/utils';
+import { format } from 'date-fns';
 
 export const InitialData: CardInterface[] = [
   {
@@ -35,7 +34,7 @@ type PricesPros = {
 };
 
 export const updateData = (prices: PricesPros[]) => {
-  const date = moment().utc().format('hh:mm A DD/MM/YYYY');
+  const date = format(new Date(), 'hh:mm a dd/MM/yyyy');
 
   return [
     {
