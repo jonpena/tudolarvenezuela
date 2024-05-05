@@ -5,25 +5,25 @@ export const InitialData: CardInterface[] = [
   {
     title: 'Banco Central',
     image: './images/BCV.webp',
-    price: 'isLoading',
+    price: undefined,
     fecha: '',
   },
   {
     title: 'Dolar Today',
     image: './images/dolarToday.webp',
-    price: 'isLoading',
+    price: undefined,
     fecha: '',
   },
   {
     title: 'Monitor Dolar',
     image: './images/dolarMonitor.webp',
-    price: 'isLoading',
+    price: undefined,
     fecha: '',
   },
   {
     title: 'Bitcoin',
     image: './images/bitcoin.webp',
-    price: 'isLoading',
+    price: undefined,
     fecha: '',
   },
 ];

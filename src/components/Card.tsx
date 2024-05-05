@@ -21,7 +21,7 @@ const Card = ({ card }: { card: CardInterface }) => {
         </h2>
         <p className='text-center text-sm'>{fecha}</p>
         <button className='w-40 h-9 absolute -bottom-2 my-4 py-1 px-6 rounded-md font-semibold text-xl text-white uppercase card-btn one'>
-          {price === 'isLoading' ? <Loader /> : `${price} BS`}
+          {!price ? <Loader /> : `${price} BS`}
         </button>
       </div>
     </div>
