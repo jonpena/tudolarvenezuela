@@ -2,7 +2,6 @@ import { CardInterface } from '../interfaces/card.interface';
 import Loader from './Loader';
 
 const Card = ({ card }: { card: CardInterface }) => {
-  // Destructuring Card Data
   const { title, image, price, fecha } = card;
 
   return (

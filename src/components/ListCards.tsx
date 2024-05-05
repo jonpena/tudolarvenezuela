@@ -9,7 +9,7 @@ import { CardInterface } from '../interfaces/card.interface';
 const ListCards = () => {
   const [prices, setPrices] = useState(InitialData);
 
-  const { data: dolarPrices, isLoading: isLoadingPrices } = useSWR(
+  const { data, isLoading: isLoadingPrices } = useSWR(
     URI_API_AWS,
     dataFetching,
     { revalidateOnFocus: false, revalidateOnMount: true }
@@ -17,11 +17,9 @@ const ListCards = () => {
 
   useEffect(() => {
     if (!isLoadingPrices) {
-      console.log(dolarPrices);
-
-      setPrices(updateData(dolarPrices));
+      setPrices(updateData(data));
     }
-  }, [dolarPrices]);
+  }, [data]);
 
   return (
     <section className='max-w-7xl mt-20 mx-auto px-14 mb-16 py-8 grid grid-auto-fluid place-items-center  gap-10'>
