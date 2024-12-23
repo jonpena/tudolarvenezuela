@@ -136,7 +136,7 @@ body {
 }
 
 .bg-gradient {
-  background-image: linear-gradient(to left, var(--color-b), var(--color-f));
+  background: linear-gradient(to bottom left, var(--color-b), var(--color-t));
 }
 
 .grid-auto-fluid {
@@ -174,6 +174,6 @@ body {
   }
   20%,
   to {
-    transform: scale(1.2);
+    transform: scale(1.1);
   }
 }

@@ -1,8 +1,12 @@
-const Loader = () => {
+type LoaderProps = {
+  className?: string;
+};
+
+const Loader = ({ className }: LoaderProps) => {
   return (
     <div>
       <svg
-        className='mx-auto w-5 h-5 text-white-custom animate-spin'
+        className={`text-neutral-50 mx-auto animate-spin ${className}`}
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
         viewBox='0 0 24 24'
