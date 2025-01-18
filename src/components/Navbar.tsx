@@ -8,7 +8,7 @@ const Navbar = () => {
 
   const handleUpdatePrices = async () => {
     try {
-      await mutatePrices(GET_PRICES_AWS);
+      await mutatePrices(GET_PRICES_AWS, { revalidate: true });
       console.log('Prices updated successfully');
     } catch (error) {
       console.error('Error updating prices:', error);
@@ -40,17 +40,8 @@ const Navbar = () => {
         </a>
 
         <div className='hidden md:flex items-center space-x-6'>
-          <a href='#' className='text-neutral-50 transition-colors'>
-            Inicio
-          </a>
-          <a href='#' className='text-neutral-50 transition-colors'>
-            Histórico
-          </a>
-          <a href='#' className='text-neutral-50  transition-colors'>
-            Calculadora
-          </a>
           <button
-            className='card-btn one border border-neutral-200 px-4 py-2 rounded-lg font-medium hover:opacity-80   transition-opacity text-neutral-50'
+            className='card-btn one border border-neutral-200 px-4 py-2 rounded-lg font-medium hover:opacity-80 transition-opacity text-neutral-50 select-none'
             onClick={handleUpdatePrices}
           >
             Actualizar
