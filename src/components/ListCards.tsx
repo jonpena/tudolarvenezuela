@@ -5,13 +5,11 @@ import { CardInterface } from '../interfaces/card.interface';
 import { usePrices } from '../hooks/usePrices';
 
 const ListCards = () => {
-  const [prices, setPrices] = useState(InitialData);
   const { data } = usePrices();
+  const [prices, setPrices] = useState(InitialData);
 
   useEffect(() => {
-    if (data) {
-      setPrices(updateData(data));
-    }
+    if (data) setPrices(updateData(data));
   }, [data]);
 
   return (
