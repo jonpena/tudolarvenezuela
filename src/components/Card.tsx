@@ -29,17 +29,18 @@ const Card = ({ card }: CardProps) => {
         <p className='text-center text-sm text-gray-600 font-medium tracking-wide mb-2'>
           {card.fecha}
         </p>
-        <button className='w-40 h-9 absolute -bottom-2 my-4 py-1 px-6 rounded-md font-semibold text-xl text-white uppercase card-btn one transition-all duration-300'>
+        <button className='w-40 h-9 absolute -bottom-2 my-4 py-1 pl-11 rounded-md font-semibold text-xl text-white uppercase card-btn one transition-all duration-300'>
           {!card.price ? (
             <Loader className='w-5 h-5' />
           ) : (
-            <span className='flex items-center justify-center'>
+            <span className='flex items-center gap-x-2'>
               <span className='flex items-center'>
-                {card.price.replace(',', '.')}
+                {parseFloat(card?.price.replace(',', '.')).toFixed(2)}
+
                 {isValidating ? (
-                  <Loader className='w-3 h-3 ml-0.5 mb-0.5' />
+                  <Loader className='w-3 h-3 mb-0.5 ml-1 ' />
                 ) : (
-                  <span className='text-sm ml-0.5'>BS</span>
+                  <span className='text-sm ml-1'>bs</span>
                 )}
               </span>
             </span>
