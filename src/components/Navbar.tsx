@@ -7,7 +7,6 @@ const Navbar = () => {
   const handleUpdatePrices = async () => {
     try {
       await mutatePrices(GET_PRICES_AWS, { revalidate: true });
-      console.log('Prices updated successfully');
     } catch (error) {
       console.error('Error updating prices:', error);
     }

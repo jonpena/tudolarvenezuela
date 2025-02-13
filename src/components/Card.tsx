@@ -9,8 +9,6 @@ type CardProps = {
 const Card = ({ card }: CardProps) => {
   const { isValidating, isLoading } = usePrices();
 
-  console.log('isValidating', isLoading);
-
   return (
     <div className='relative w-56 h-[370px] rounded-2xl border-4 border-white-custom overflow-hidden bg-white-custom cursor-pointer transition-all ease-in-out card-wrap hover:scale-105'>
       <div className='w-full h-48 grid place-items-center card-header one'>
